@@ -1,0 +1,13 @@
+{
+  "id": "example.plugin",
+  "version": "0.1.0",
+  "title": "My NexaCL plugin",
+  "permissions": [
+    "nexa.files.read",
+    "nexa.ui.write",
+    "nexa.actions.write",
+    "nexa.actions.read",
+    "nexa.tasks.read"
+  ],
+  "optionalCapabilities": []
+}

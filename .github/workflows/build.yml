@@ -1,0 +1,23 @@
+name: Build plugin example
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.403'
+      - run: sudo apt-get update && sudo apt-get install -y clang lld
+      - run: python eng/build.py
+      - run: python eng/verify_package.py
+      - run: dotnet build managed-contract -c Release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plugin-package
+          path: artifacts/plugin.zip

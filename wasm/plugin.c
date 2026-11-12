@@ -9,7 +9,7 @@ NX_EXPORT("nexa_resume") nx_u64 nexa_resume(nx_u32 address,nx_u32 size) {
  nx_require(address==(nx_u32)(__UINTPTR_TYPE__)input && size<=sizeof input);
  nx_value message=nx_decode(input,size); nx_writer reply={output,0,sizeof output},args={arguments,0,sizeof arguments}; nx_call_options options={0};
  if(nx_is_string(nx_field(message,"kind"),"reply")) {
-  if(!nx_reply_success(message)) {step=0;nx_complete(&reply,0);}
+  if(!nx_reply_success(message)) {step=0;nx_handler_error(&reply,nx_reply_error(message));}
   else if(step==1) {
    nx_FileRef file;nx_require(nx_Files_OpenPackageFile_result(message,&file));
    nx_UIPage page=nx_UIPage_write(&args,nx_literal(PLUGIN_ID ":home"),file,nx_schema_Empty(&args),nx_QualifiedIdArray_write(&args,0,0));

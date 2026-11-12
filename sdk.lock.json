@@ -1,9 +1,9 @@
 {
   "repository": "Nexa-MC/NexaCL-Plugin-SDK",
-  "commit": "a710b6f4013802a4dc68720e8b49deda1cd0245d",
-  "version": "0.2.0-alpha.11",
-  "release": "v0.2.0-alpha.11",
-  "file": "Nexa.Plugin.Sdk.Bundle.0.2.0-alpha.11.zip",
-  "size": 1587254,
-  "sha256": "6c7eb10ef378e46584df1927313f224eb0596dc73e24895d1eb5a28bfb317d33"
+  "commit": "e721c6232c1ac280d3a1d6ac7a4c68dacfd97fc6",
+  "version": "0.2.0-alpha.12",
+  "release": "v0.2.0-alpha.12",
+  "file": "Nexa.Plugin.Sdk.Bundle.0.2.0-alpha.12.zip",
+  "size": 1593144,
+  "sha256": "92f56b9036da60c2882b632eeb00c54ad67ea6d0665dab746b75178e64785c6e"
 }

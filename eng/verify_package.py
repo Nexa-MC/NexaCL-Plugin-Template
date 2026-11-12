@@ -1,6 +1,11 @@
 """Verify the built example's manifest and payload identities."""
 import hashlib,json,sys,zipfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
+root=Path(__file__).resolve().parents[1]
+version=json.loads((root/'sdk.lock.json').read_text())['version']
+reference=ET.parse(root/'managed-contract/ContractExample.csproj').find('.//PackageReference[@Include="Nexa.Plugin.Sdk.Abi100"]')
+assert reference is not None and reference.get('Version') == '['+version+']', 'Managed example must use the pinned SDK version.'
 path=Path(sys.argv[1] if len(sys.argv)>1 else 'artifacts/plugin.zip')
 with zipfile.ZipFile(path) as archive:
  names=archive.namelist();manifest=json.loads(archive.read('plugin.json'))

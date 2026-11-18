@@ -19,7 +19,7 @@ needed.
    python eng/verify_package.py
    ```
 
-4. In a compatible NexaCL development build, enable developer mode, open plugin
+4. In a compatible NexaCL development build with PluginSidecar installed, enable developer mode, open plugin
    management, select `artifacts/plugin.zip` and review the package permissions.
 5. Open the plugin page and click **Run action**. Approve the Host dialog. The
    callback returns `Desktop action completed`; cancellation must not execute it.
@@ -71,3 +71,8 @@ For SDK development only, `--sdk-root /path/to/NexaCL-Plugin-SDK` uses a local
 checkout's headers. Published projects should use the pinned default.
 
 [Contributing](CONTRIBUTING.md) · [Apache-2.0](LICENSE)
+
+This template pins SDK **0.2.0-beta.1**. Bootstrap V1 and ABI 100 are frozen; new
+contract behavior uses negotiated `EXP_ID` schemas. Market production delivery
+and the launcher's optional PluginSidecar distribution are separate from this
+authoring SDK release.

@@ -36,3 +36,5 @@ Wasm 项目可离线构建。运行时离线准入仍由宿主控制。
 
 升级 SDK 时同步更新锁文件和 C# PackageReference。除 CI 外，还应在启动器中验证拒绝确认、
 停止、重载和权限不足等路径；编译通过不等于功能已经在宿主中完成。
+
+本模板固定使用 **SDK 0.2.0-beta.1**。开发测试需要兼容的 NexaCL 与 PluginSidecar。Bootstrap V1 和 ABI 100 已冻结，新增契约行为通过 `EXP_ID` 显式协商；市场生产交付与可选 PluginSidecar 的发布独立于 SDK 版本。
